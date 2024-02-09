@@ -37,6 +37,9 @@ sbatch '<script name>'.bash <br> <br>
 Create a new file containing only your desired sequence using the following commands: <br> <br>
 echo 'chr14p' > seqname.txt <br>
 seqtk subseq AmexG_v6.0-DD.fa seqname.txt > chromosome14.txt <br> <br>
+```diff
+- Need to load module seqtk
+```
 The file chromosome14.txt now contains the sequence for only chromosome 14. <br> <br>
 >chr14p
 GGTTTTCTCTGTTTGCTTTTCCCTTCTCCTTGGGATAAGTTCTTTCTACTTACCTGACGGCCGTTTCAGTTTCTGCGGTGGCCTTCTTGTCT
@@ -45,7 +48,9 @@ GGTTTTCTCTGTTTGCTTTTCCCTTCTCCTTGGGATAAGTTCTTTCTACTTACCTGACGGCCGTTTCAGTTTCTGCGGTG
 1. Once you have isolated the .fa or .fasta file for your sequence, load the relevant modules (emboss and seqtk) into your working directory. <br> <br>
 module load emboss/6.6.0 <br>
 module load seqtk
-
+```diff
+- only need emboss for this command, not seqtk
+```
 2. Generate the reverse compliment of a sequence into a new file reversecompliment.txt <br> <br>
 revseq chromosome14.txt  reversecompliment.txt <br> <br>
 >chr14p Reversed:
@@ -59,6 +64,9 @@ module load seqtk
 
 2. Generate the predicted amino acid translation of a sequence into a new file AAsequence.txt <br> <br>
 transeq chromosome14.txt  AAsequence.txt <br> <br>
+```diff
+- only need emboss for this command, not seqtk
+```
 >chr14p_1 <br>
 GFLCLLFPSPWDKFFLLT*RPFQFLRWPSCLQPLPCRSLGTTSLFPL*SRRFGGRHVFSL <br>
 LFAALFSRGSPVFPCFLCPLFPLP*FSLSYRAW*VLGPEVSSAPFTSHWCRFGLLSCVLP <br>
@@ -71,6 +79,9 @@ module load seqtk
 
 2. Using the command infoseq displays basic information about sequences, inlcuding GC content. <br> <br>
 infoseq chromosome14.txt  <br> <br>
+```diff
+- only need emboss for this command, not seqtk
+```
 Display basic information about sequences
 USA                      Database  Name           Accession      Type Length %GC    Organism            Description
 fasta::chromosome14.txt:chr14p -              chr14p         -              N    184706515 46.67
